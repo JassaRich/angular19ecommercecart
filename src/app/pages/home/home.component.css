@@ -1,0 +1,67 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  @media (max-width: 768px) {
+    .winter-sales-section {
+      padding: 50px 0;
+    }
+  
+    .winter-sales-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .winter-sales-section p {
+      font-size: 1.2rem;
+    }
+  }
+  /* Winter Sales Section Styling */
+.winter-sales-section {
+  background: url('https://tuihills.co.nz/wp-content/uploads/Tui-Hills-buying-a-flower-girl-dress-02.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Add a semi-transparent overlay for better text readability */
+.winter-sales-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.winter-sales-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.winter-sales-section h1,
+.winter-sales-section p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}

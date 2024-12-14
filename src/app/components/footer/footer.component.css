@@ -1,0 +1,14 @@
+footer {
+    background-color: #343a40; /* Bootstrap dark color */
+    color: #ffffff;
+  }
+  
+  footer a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  

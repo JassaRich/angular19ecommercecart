@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <h1>Your Cart</h1>
+  
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>{{ item.title }}</td>
+            <td>${{ item.price }}</td>
+            <td>
+              <input
+                type="number"
+                [(ngModel)]="item.quantity"
+                (change)="updateQuantity(item.id, item.quantity)"
+                min="1"
+                class="form-control"
+                style="width: 70px;"
+              />
+            </td>
+            <td>${{ item.price * item.quantity }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="removeFromCart(item.id)">
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end">
+        <h5>Total: ${{ getTotalPrice() }}</h5>
+        <button class="btn btn-success">Checkout</button>
+      </div>
+    </div>
+  
+    <ng-template #emptyCart>
+      <p>Your cart is empty. Start adding some products!</p>
+    </ng-template>
+  </div>
+  
